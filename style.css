@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-canvas {
-  background: #222;
-  border: 2px solid white;
-}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #091917; color: #e0eedb; font-family: ui-monospace, Consolas, monospace; display: grid; place-items: center; padding: 20px; }
+main { width: min(100%, 804px); }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 25px; letter-spacing: 2px; margin: 12px 0; color: #bde985; }
+.buttons { display: flex; gap: 8px; }
+button { font: inherit; border: 1px solid #789a76; border-radius: 4px; padding: 9px 14px; color: #e0eedb; background: #234338; cursor: pointer; }
+button:hover { background: #355b45; }
+button:focus-visible { outline: 3px solid #ffe59a; outline-offset: 3px; }
+button:disabled { opacity: .45; cursor: default; }
+#hud { font-size: 13px; min-height: 20px; line-height: 1.6; }
+.arena { position: relative; }
+canvas { display: block; width: 100%; height: auto; background: #152d29; border: 2px solid #789a76; image-rendering: pixelated; touch-action: none; }
+#overlay { position: absolute; inset: 0; background: #071713dd; display: grid; place-items: center; padding: 16px; }
+[hidden], #overlay[hidden] { display: none; }
+.panel { max-width: 500px; text-align: center; }
+.eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: #a2bc92; }
+h2 { font-size: clamp(24px, 5vw, 38px); color: #bde985; margin: 16px 0; }
+#message { line-height: 1.7; font-size: 14px; }
+#action { background: #bde985; color: #152d29; font-weight: bold; margin-top: 12px; }
+.controls { color: #a2bc92; font-size: 12px; line-height: 1.9; }

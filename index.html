@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pixel Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frogger · Pixel Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="gameCanvas" width="800" height="500"></canvas>
-
+  <main>
+    <header><h1>Frogger</h1><div class="buttons"><button id="pause" disabled>Pause (P)</button><button id="mute" aria-pressed="false">Sound: on</button></div></header>
+    <p id="hud" role="status">Loading the pond…</p>
+    <div class="arena">
+      <canvas id="gameCanvas" width="800" height="500" aria-label="Pond arena. Move with WASD or arrow keys and aim with the mouse."></canvas>
+      <section id="overlay"><div class="panel"><p class="eyebrow">A tiny frog. A big responsibility.</p><h2 id="heading">Loading…</h2><p id="message">Preparing sprites.</p><button id="action" hidden>Start game</button></div></section>
+    </div>
+    <p class="controls">WASD / arrows to move · Hold left click to attack · P / Esc to pause<br>Rocks block movement and tongues. From wave 3, slimes take two hits.</p>
+  </main>
   <script src="game.js"></script>
 </body>
 </html>
